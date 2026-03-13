@@ -3,7 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:DocumentEater.ViewModels;assembly=DocumentEater"
-             xmlns:data="using:Avalonia.Controls"
+             xmlns:dgrid="clr-namespace:Avalonia.Controls;assembly=Avalonia.Controls.DataGrid"
              x:Class="DocumentEater.Pages.ResultTablePage"
              mc:Ignorable="d">
     <Grid RowDefinitions="Auto,Auto,*" Margin="16">
@@ -21,22 +21,23 @@
                        FontSize="11"/>
         </StackPanel>
 
-        <data:DataGrid Grid.Row="2"
-                       ItemsSource="{Binding Rows}"
-                       AutoGenerateColumns="False"
-                       HeadersVisibility="All">
-            <data:DataGrid.Columns>
-                <data:DataGridTextColumn Header="№"
-                                         Binding="{Binding Col1}"/>
-                <data:DataGridTextColumn Header="Документ"
-                                         Binding="{Binding Col2}"/>
-                <data:DataGridTextColumn Header="Тип"
-                                         Binding="{Binding Col3}"/>
-                <data:DataGridTextColumn Header="Дата"
-                                         Binding="{Binding Col4}"/>
-                <data:DataGridTextColumn Header="Комментарий"
-                                         Binding="{Binding Col5}"/>
-            </data:DataGrid.Columns>
-        </data:DataGrid>
+        <!-- Таблица результатов на базе DataGrid -->
+        <dgrid:DataGrid Grid.Row="2"
+                        ItemsSource="{Binding Rows}"
+                        AutoGenerateColumns="False"
+                        HeadersVisibility="All">
+            <dgrid:DataGrid.Columns>
+                <dgrid:DataGridTextColumn Header="№"
+                                          Binding="{Binding Col1}" />
+                <dgrid:DataGridTextColumn Header="Документ"
+                                          Binding="{Binding Col2}" />
+                <dgrid:DataGridTextColumn Header="Тип"
+                                          Binding="{Binding Col3}" />
+                <dgrid:DataGridTextColumn Header="Дата"
+                                          Binding="{Binding Col4}" />
+                <dgrid:DataGridTextColumn Header="Комментарий"
+                                          Binding="{Binding Col5}" />
+            </dgrid:DataGrid.Columns>
+        </dgrid:DataGrid>
     </Grid>
 </UserControl>
