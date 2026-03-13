@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projects\\DocumentEater\\DocumentEater\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF0DEB4-7F67-525F-70A9-2B19D94B9188}|DocumentEater\\DocumentEater.csproj|d:\\projects\\documenteater\\documenteater\\documenteater\\documenteater.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1BF0DEB4-7F67-525F-70A9-2B19D94B9188}|DocumentEater\\DocumentEater.csproj|solutionrelative:documenteater\\documenteater.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF0DEB4-7F67-525F-70A9-2B19D94B9188}|DocumentEater\\DocumentEater.csproj|d:\\projects\\documenteater\\documenteater\\documenteater\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BF0DEB4-7F67-525F-70A9-2B19D94B9188}|DocumentEater\\DocumentEater.csproj|solutionrelative:documenteater\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF0DEB4-7F67-525F-70A9-2B19D94B9188}|DocumentEater\\DocumentEater.csproj|d:\\projects\\documenteater\\documenteater\\documenteater\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "RelativeMoniker": "D:0:0:{1BF0DEB4-7F67-525F-70A9-2B19D94B9188}|DocumentEater\\DocumentEater.csproj|solutionrelative:documenteater\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DocumentEater",
+              "DocumentMoniker": "D:\\Projects\\DocumentEater\\DocumentEater\\DocumentEater\\DocumentEater.csproj",
+              "RelativeDocumentMoniker": "DocumentEater\\DocumentEater.csproj",
+              "ToolTip": "D:\\Projects\\DocumentEater\\DocumentEater\\DocumentEater\\DocumentEater.csproj",
+              "RelativeToolTip": "DocumentEater\\DocumentEater.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-13T09:56:17.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.axaml",
+              "DocumentMoniker": "D:\\Projects\\DocumentEater\\DocumentEater\\DocumentEater\\MainWindow.axaml",
+              "RelativeDocumentMoniker": "DocumentEater\\MainWindow.axaml",
+              "ToolTip": "D:\\Projects\\DocumentEater\\DocumentEater\\DocumentEater\\MainWindow.axaml",
+              "RelativeToolTip": "DocumentEater\\MainWindow.axaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-13T09:25:27.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.axaml.cs",
+              "DocumentMoniker": "D:\\Projects\\DocumentEater\\DocumentEater\\DocumentEater\\MainWindow.axaml.cs",
+              "RelativeDocumentMoniker": "DocumentEater\\MainWindow.axaml.cs",
+              "ToolTip": "D:\\Projects\\DocumentEater\\DocumentEater\\DocumentEater\\MainWindow.axaml.cs",
+              "RelativeToolTip": "DocumentEater\\MainWindow.axaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T09:25:24.783Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
