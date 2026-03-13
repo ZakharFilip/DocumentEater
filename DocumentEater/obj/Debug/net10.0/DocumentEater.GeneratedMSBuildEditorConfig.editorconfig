@@ -28,3 +28,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [D:/Projects/DocumentEater/DocumentEater/DocumentEater/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[D:/Projects/DocumentEater/DocumentEater/DocumentEater/Pages/ResultTablePage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[D:/Projects/DocumentEater/DocumentEater/DocumentEater/Pages/UploadPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

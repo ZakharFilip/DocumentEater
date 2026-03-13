@@ -1,0 +1,51 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:DocumentEater.ViewModels;assembly=DocumentEater"
+             x:Class="DocumentEater.Pages.UploadPage"
+             x:Name="UploadPageRoot"
+             x:DataType="vm:UploadPageViewModel">
+    <Grid RowDefinitions="Auto,*" Margin="16">
+        <TextBlock Text="Загрузка документов" FontSize="20" FontWeight="Bold" Margin="0,0,0,12"/>
+
+        <StackPanel Grid.Row="1" Spacing="12">
+            <!-- Область добавления файлов -->
+            <Border Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}"
+                    Padding="24" CornerRadius="8"
+                    x:Name="DropZone">
+                <StackPanel Spacing="8" HorizontalAlignment="Center">
+                    <TextBlock Text="Перетащите .docx сюда или нажмите кнопку ниже"
+                               HorizontalAlignment="Center" TextAlignment="Center"/>
+                    <Button Content="Выбрать файлы..." x:Name="PickFilesButton" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Список загруженных документов -->
+            <TextBlock Text="Загруженные документы:" FontWeight="SemiBold"/>
+            <ItemsControl x:Name="DocumentsList" ItemsSource="{Binding Documents}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="vm:UploadedDocumentItem">
+                        <Border Padding="8,6" Margin="0,2" Background="{DynamicResource SystemControlBackgroundAltHighBrush}"
+                                CornerRadius="4">
+                            <Grid ColumnDefinitions="Auto,*,Auto">
+                                <CheckBox IsChecked="{Binding IsSelected}" VerticalAlignment="Center" Margin="0,0,12,0"/>
+                                <TextBlock Text="{Binding FileName}" VerticalAlignment="Center" Grid.Column="1"
+                                           TextTrimming="CharacterEllipsis"/>
+                                <Button Content="Удалить"
+                                        Command="{Binding #UploadPageRoot.DataContext.RemoveCommand}"
+                                        CommandParameter="{Binding}"
+                                        Grid.Column="2" Margin="8,0,0,0"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <StackPanel Orientation="Horizontal" Spacing="12">
+                <Button Content="Обработать" Command="{Binding ProcessCommand}"
+                        IsEnabled="{Binding !IsProcessing}"/>
+                <TextBlock Text="{Binding StatusMessage}" VerticalAlignment="Center"
+                           IsVisible="{Binding StatusMessage, Converter={x:Static ObjectConverters.IsNotNull}}"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

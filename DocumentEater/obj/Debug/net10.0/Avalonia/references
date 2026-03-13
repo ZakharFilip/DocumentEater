@@ -22,6 +22,8 @@ C:\Users\Zahar\.nuget\packages\avalonia\11.3.11\ref\net8.0\Avalonia.Vulkan.dll
 C:\Users\Zahar\.nuget\packages\avalonia.win32\11.3.11\lib\net8.0\Avalonia.Win32.Automation.dll
 C:\Users\Zahar\.nuget\packages\avalonia.win32\11.3.11\lib\net8.0\Avalonia.Win32.dll
 C:\Users\Zahar\.nuget\packages\avalonia.x11\11.3.11\lib\net8.0\Avalonia.X11.dll
+C:\Users\Zahar\.nuget\packages\documentformat.openxml\3.4.1\lib\net10.0\DocumentFormat.OpenXml.dll
+C:\Users\Zahar\.nuget\packages\documentformat.openxml.framework\3.4.1\lib\net10.0\DocumentFormat.OpenXml.Framework.dll
 C:\Users\Zahar\.nuget\packages\harfbuzzsharp\8.3.1.1\lib\net8.0\HarfBuzzSharp.dll
 C:\Users\Zahar\.nuget\packages\microcom.runtime\0.11.0\lib\net5.0\MicroCom.Runtime.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.4\ref\net10.0\Microsoft.CSharp.dll
@@ -82,6 +84,7 @@ C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.4\ref\net10.0\Syste
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.4\ref\net10.0\System.IO.FileSystem.Watcher.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.4\ref\net10.0\System.IO.IsolatedStorage.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.4\ref\net10.0\System.IO.MemoryMappedFiles.dll
+C:\Users\Zahar\.nuget\packages\system.io.packaging\8.0.1\lib\net8.0\System.IO.Packaging.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.4\ref\net10.0\System.IO.Pipelines.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.4\ref\net10.0\System.IO.Pipes.AccessControl.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.4\ref\net10.0\System.IO.Pipes.dll

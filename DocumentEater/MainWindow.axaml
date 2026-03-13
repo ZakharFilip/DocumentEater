@@ -2,8 +2,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="550"
         x:Class="DocumentEater.MainWindow"
-        Title="DocumentEater">
-    Welcome to Avalonia!
+        Title="DocumentEater"
+        Width="800" Height="550">
+    <ContentControl x:Name="MainContent"/>
 </Window>
