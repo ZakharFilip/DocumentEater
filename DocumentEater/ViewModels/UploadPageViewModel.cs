@@ -96,7 +96,8 @@ public class UploadPageViewModel : ViewModelBase
         {
             var extracted = await _extraction.ExtractAsync(selected).ConfigureAwait(true);
             var records = _markup.Process(extracted.ToList());
-            _navigation.ShowResultTablePage(records);
+            var summary = $"Обработано документов: {selected.Count}, получено строк в таблице: {records.Count}.";
+            _navigation.ShowResultTablePage(records, summary);
         }
         catch (Exception ex)
         {

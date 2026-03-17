@@ -8,5 +8,5 @@ namespace DocumentEater.Services;
 public interface INavigationService
 {
     void ShowUploadPage();
-    void ShowResultTablePage(IReadOnlyList<StructuredRecord> data);
+    void ShowResultTablePage(IReadOnlyList<StructuredRecord> data, string? resultSummary = null);
 }

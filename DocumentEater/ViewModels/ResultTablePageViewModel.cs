@@ -1,75 +1,67 @@
 using System.Collections.ObjectModel;
-using System.Windows.Input;
 using DocumentEater.Models;
+using DocumentEater.Services.Parsers;
 
 namespace DocumentEater.ViewModels;
 
 /// <summary>
-/// ViewModel страницы конструкторской таблицы.
-/// Пока модуль смысловой разметки не реализован, таблица заполняется тестовыми данными.
+/// ViewModel страницы результатов. Данные и текст для MessageBox передаются при навигации.
+/// Колонки вычисляются из данных — таблица подстраивается под любое количество столбцов без изменения кода.
 /// </summary>
-public class ResultTablePageViewModel : ViewModelBase
+public class ResultTablePageViewModel
 {
-    public ResultTablePageViewModel(IReadOnlyList<StructuredRecord> data)
+    public ResultTablePageViewModel(IReadOnlyList<StructuredRecord> data, string? resultSummary = null)
     {
-        Rows = new ObservableCollection<ResultRowViewModel>();
-        ExportToExcelCommand = new ExportToExcelCommandImpl();
-
-        // Модуль 2 ещё не реализован – игнорируем входные данные и заполняем тестовыми строками.
-        LoadTestData();
+        var list = data ?? Array.Empty<StructuredRecord>();
+        ColumnNames = BuildColumnNames(list);
+        Rows = new ObservableCollection<ResultTableRow>(BuildRows(list, ColumnNames));
+        ResultSummary = resultSummary ?? string.Empty;
     }
 
-    /// <summary>Строки таблицы, которые отображаются во View.</summary>
-    public ObservableCollection<ResultRowViewModel> Rows { get; }
+    /// <summary>Имена колонок в порядке отображения: сначала строго по TableColumns.Headers (совпадение со вторым модулем), затем доп. ключи.</summary>
+    public IReadOnlyList<string> ColumnNames { get; }
 
-    /// <summary>Команда выгрузки в Excel (реализация будет в модуле 4).</summary>
-    public ICommand ExportToExcelCommand { get; }
+    /// <summary>Строки таблицы для привязки к DataGrid (число строк = число записей из второго модуля).</summary>
+    public ObservableCollection<ResultTableRow> Rows { get; }
 
-    private void LoadTestData()
+    /// <summary>Сообщение для показа в диалоге результата работы модуля (например: «Обработано документов: N, строк: M»).</summary>
+    public string ResultSummary { get; }
+
+    private static IReadOnlyList<string> BuildColumnNames(IReadOnlyList<StructuredRecord> records)
     {
-        // TODO: заменить на реальные данные из модуля 2, когда он будет готов.
-        // Структура и значения основаны на шаблонной таблице ExapleOfTable.xlsx.
-
-        Rows.Clear();
-
-        // Пример: пять строк с условными данными (все значения как строки).
-        Rows.Add(new ResultRowViewModel("1", "Документ 1", "Тип A", "01.01.2024", "Комментарий 1"));
-        Rows.Add(new ResultRowViewModel("2", "Документ 2", "Тип B", "05.01.2024", "Комментарий 2"));
-        Rows.Add(new ResultRowViewModel("3", "Документ 3", "Тип A", "10.01.2024", "Комментарий 3"));
-        Rows.Add(new ResultRowViewModel("4", "Документ 4", "Тип C", "15.01.2024", "Комментарий 4"));
-        Rows.Add(new ResultRowViewModel("5", "Документ 5", "Тип B", "20.01.2024", "Комментарий 5"));
-    }
-
-    /// <summary>Одна строка результирующей таблицы.</summary>
-    public class ResultRowViewModel : ViewModelBase
-    {
-        private string _col1;
-        private string _col2;
-        private string _col3;
-        private string _col4;
-        private string _col5;
-
-        public ResultRowViewModel(string col1, string col2, string col3, string col4, string col5)
+        var allKeys = new HashSet<string>(StringComparer.Ordinal);
+        foreach (var r in records)
         {
-            _col1 = col1;
-            _col2 = col2;
-            _col3 = col3;
-            _col4 = col4;
-            _col5 = col5;
+            if (r.Fields != null)
+            {
+                foreach (var k in r.Fields.Keys)
+                    allKeys.Add(k);
+            }
         }
 
-        public string Col1 { get => _col1; set => SetProperty(ref _col1, value); }
-        public string Col2 { get => _col2; set => SetProperty(ref _col2, value); }
-        public string Col3 { get => _col3; set => SetProperty(ref _col3, value); }
-        public string Col4 { get => _col4; set => SetProperty(ref _col4, value); }
-        public string Col5 { get => _col5; set => SetProperty(ref _col5, value); }
+        var ordered = new List<string>();
+        foreach (var h in TableColumns.Headers)
+        {
+            if (allKeys.Remove(h))
+                ordered.Add(h);
+        }
+        foreach (var k in allKeys.OrderBy(x => x, StringComparer.Ordinal))
+            ordered.Add(k);
+
+        return ordered;
     }
 
-    /// <summary>Пока команда-заглушка для будущего экспорта в Excel.</summary>
-    private sealed class ExportToExcelCommandImpl : ICommand
+    private static IEnumerable<ResultTableRow> BuildRows(IReadOnlyList<StructuredRecord> records, IReadOnlyList<string> columnNames)
     {
-        public bool CanExecute(object? parameter) => true;
-        public void Execute(object? parameter) { /* реализация появится в модуле 4 */ }
-        public event EventHandler? CanExecuteChanged;
+        foreach (var r in records)
+        {
+            var values = new object?[columnNames.Count];
+            if (r.Fields != null)
+            {
+                for (var i = 0; i < columnNames.Count; i++)
+                    values[i] = r.Fields.TryGetValue(columnNames[i], out var v) ? v : null;
+            }
+            yield return new ResultTableRow(values);
+        }
     }
 }

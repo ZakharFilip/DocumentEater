@@ -15,7 +15,6 @@ D:\Projects\DocumentEater\DocumentEater\DocumentEater\bin\Debug\net10.0\Avalonia
 D:\Projects\DocumentEater\DocumentEater\DocumentEater\bin\Debug\net10.0\Avalonia.Vulkan.dll
 D:\Projects\DocumentEater\DocumentEater\DocumentEater\bin\Debug\net10.0\Avalonia.dll
 D:\Projects\DocumentEater\DocumentEater\DocumentEater\bin\Debug\net10.0\Avalonia.Controls.ColorPicker.dll
-D:\Projects\DocumentEater\DocumentEater\DocumentEater\bin\Debug\net10.0\Avalonia.Controls.DataGrid.dll
 D:\Projects\DocumentEater\DocumentEater\DocumentEater\bin\Debug\net10.0\Avalonia.Desktop.dll
 D:\Projects\DocumentEater\DocumentEater\DocumentEater\bin\Debug\net10.0\Avalonia.Diagnostics.dll
 D:\Projects\DocumentEater\DocumentEater\DocumentEater\bin\Debug\net10.0\Avalonia.Fonts.Inter.dll
@@ -76,3 +75,4 @@ D:\Projects\DocumentEater\DocumentEater\DocumentEater\obj\Debug\net10.0\refint\D
 D:\Projects\DocumentEater\DocumentEater\DocumentEater\obj\Debug\net10.0\DocumentEater.pdb
 D:\Projects\DocumentEater\DocumentEater\DocumentEater\obj\Debug\net10.0\DocumentEater.genruntimeconfig.cache
 D:\Projects\DocumentEater\DocumentEater\DocumentEater\obj\Debug\net10.0\ref\DocumentEater.dll
+d:\Projects\DocumentEater\DocumentEater\DocumentEater\bin\Debug\net10.0\Avalonia.Controls.DataGrid.dll

@@ -32,9 +32,9 @@ public class NavigationService : INavigationService
         _setMainContent(new UploadPage { DataContext = vm });
     }
 
-    public void ShowResultTablePage(IReadOnlyList<StructuredRecord> data)
+    public void ShowResultTablePage(IReadOnlyList<StructuredRecord> data, string? resultSummary = null)
     {
-        var vm = new ResultTablePageViewModel(data);
+        var vm = new ResultTablePageViewModel(data, resultSummary);
         _setMainContent(new ResultTablePage { DataContext = vm });
     }
 }

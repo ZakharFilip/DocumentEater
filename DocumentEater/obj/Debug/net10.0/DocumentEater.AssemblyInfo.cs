@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DocumentEater")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+267247c4232213a6b1a92467b5975983e323ad28")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+70f9a7579490958b0befbec24bd90c3d34e0970b")]
 [assembly: System.Reflection.AssemblyProductAttribute("DocumentEater")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DocumentEater")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
